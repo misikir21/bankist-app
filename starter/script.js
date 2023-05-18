@@ -45,3 +45,6 @@ header.append(message)
 document.querySelector('.btn--close--cookie').addEventListener('click',()=>{
   message.remove()
 })
+
+message.style.backgroundColor='#37383d';
+message.style.width='120%';
