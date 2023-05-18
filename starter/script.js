@@ -72,6 +72,30 @@ btnscrollto.addEventListener('click',function(e){
 const h1=document.querySelector('h1')
 const alerth1 =(function (e) {
 alert('you are reading the heading of the page')  
+});
+h1.addEventListener('mouseenter',alerth1);
+setTimeout(()=>h1.removeEventListener('mouseenter',alerth1),4000);
+
+
+//event propagation to menu
+
+/*document.querySelectorAll('.nav__link').forEach(function(el){
+el.addEventListener('click',function (e) {
+  e.preventDefault()
+  const id=this.getAttribute('href')
+  console.log(id);
+  document.querySelector(id).scrollIntoView({behavior:'smooth'})
 })
-h1.addEventListener('mouseenter',alerth1)
-setTimeout (()=>h1.removeEventListener('mouseenter',alerth1),3000)
+})*/
+
+//1.add event listner to common parent elemet
+//2.determine what element orginated the event
+
+document.querySelector('.nav__links').addEventListener('click',function (e) {
+e.preventDefault();
+//matching events
+if(e.target.classList.contains('nav__link')){
+  const id=e.target.getAttribute('href')
+  document.querySelector(id).scrollIntoView({behavior:'smooth'})
+}
+});
