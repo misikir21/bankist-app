@@ -56,5 +56,15 @@ message.style.width='120%';
 
 
 //set attribute
-const logo=document.querySelector('.nav__logo');
-logo.setAttribute('designer','misikir')
+/*const logo=document.querySelector('.nav__logo');
+logo.setAttribute('designer','misikir')*/
+
+//smooth scroll to feature section
+const btnscrollto=document.querySelector('.btn--scroll-to');
+const section1=document.querySelector('#section--1')
+btnscrollto.addEventListener('click',function(e){
+  section1.scrollIntoView({behavior:'smooth'})
+})
+
+
+
