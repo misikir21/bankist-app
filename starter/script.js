@@ -41,3 +41,7 @@ const message=document.createElement('div');
 message.classList.add('cookie-message');
 message.innerHTML='we use cookies to give better surfing experiacene <button class="btn btn--close--cookie">got it </button>'
 header.append(message)
+
+document.querySelector('.btn--close--cookie').addEventListener('click',()=>{
+  message.remove()
+})
