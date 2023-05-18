@@ -67,4 +67,11 @@ btnscrollto.addEventListener('click',function(e){
 })
 
 
+//listen for event then remove it
 
+const h1=document.querySelector('h1')
+const alerth1 =(function (e) {
+alert('you are reading the heading of the page')  
+})
+h1.addEventListener('mouseenter',alerth1)
+setTimeout (()=>h1.removeEventListener('mouseenter',alerth1),3000)
