@@ -45,6 +45,16 @@ header.append(message)
 document.querySelector('.btn--close--cookie').addEventListener('click',()=>{
   message.remove()
 })
-
+//inline style
 message.style.backgroundColor='#37383d';
 message.style.width='120%';
+
+/*document.documentElement.style.setProperty(
+  '--color-primary','yellow'
+)*/
+//this used to set variable property defined in the root element of html doc.
+
+
+//set attribute
+const logo=document.querySelector('.nav__logo');
+logo.setAttribute('designer','misikir')
