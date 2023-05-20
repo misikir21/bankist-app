@@ -99,3 +99,26 @@ if(e.target.classList.contains('nav__link')){
   document.querySelector(id).scrollIntoView({behavior:'smooth'})
 }
 });
+
+//add tabbed component 
+
+const tabs=document.querySelectorAll('.operations__tab');
+const tabcontnainer=document.querySelector('.operations__tab-container');
+const tabscontent=document.querySelectorAll('.operations__content');
+// 
+tabcontnainer.addEventListener('click',function (e) {
+  const clicked=e.target.closest('.operations__tab');
+
+  //remove active class
+  tabs.forEach(t=>t.classList.remove('operations__tab--active'))
+  clicked.classList.add('operations__tab--active')
+
+  tabscontent.forEach(t=>t.classList.remove('operations__content--active'))
+
+  //guard clause to prevent clicks that happened outside the tabs
+  if(!clicked) return;
+ //add  active class
+  document.querySelector(`.operations__content--${clicked.dataset.tab}`)
+  .classList.add('operations__content--active')
+}
+)
