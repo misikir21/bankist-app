@@ -115,7 +115,7 @@ tabcontnainer.addEventListener('click',function (e) {
 
   tabscontent.forEach(t=>t.classList.remove('operations__content--active'))
 
-  //guard clause to prevent clicks that happened outside the tabs
+  //guard clause to prevent clicks that happened outside the tabs area
   if(!clicked) return;
  //add  active class
   document.querySelector(`.operations__content--${clicked.dataset.tab}`)
