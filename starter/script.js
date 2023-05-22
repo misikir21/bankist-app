@@ -165,7 +165,26 @@ const sitckyNav=function (entries) {
 const headerobserver=new IntersectionObserver(sitckyNav,{
   root:null,
   threshold:0,
-  rootMargin:`-${navheightcal}px`
+  // rootMargin:`-${navheightcal}px`
 })
 
 headerobserver.observe(stickyheader)
+
+//reaval section on scroll
+const allsections=document.querySelectorAll('.section')
+allsections.forEach(function (section) {
+  sectionobserver.observe('section');
+  section.classList.add('section--hidden')
+  
+})
+const revalsection=function (entries,observe) {
+  const [entry]=entries;
+  if(!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden')
+}
+const sectionobserver=new IntersectionObserver(
+  revalsection,{
+  root:null,
+  threshold:0.15
+  }
+)
